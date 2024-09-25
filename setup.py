@@ -21,7 +21,7 @@ def GetRequirement(filepath:str) ->List[str]:
 #creating an object of setup class
 setup(
     name = "WineQualityModel",
-    version="0.0.1",
+    version="0.0.2",
     long_description=open("README.md").read(),
     author="Raees Azam Shaikh",
     author_email="shaikhraishazam@gmail.com",
