@@ -1,9 +1,9 @@
 artifacts_root: artifacts
 
 #first Step we are doing is Data ingestion -->
-#location where data can be store such server,cloud,database ..etc we have to fetch the data from that source store into specific location mentioned in yaml file!!
+#location/source where data can be store such server,cloud,database ..etc we have to fetch the data from that source store into specific location mentioned in yaml file!!
 data_ingestion:
   root_dir_path: artifacts/data_ingestion
-  Zip_local_dir_path: artifacts/data_ingestion/WineQT.zip
+  Zip_local_dir_path: artifacts/data_ingestion/
   unzip_dir_path: artifacts/data_ingestion/
   source_url_path: s3://raishmumbaibucket/WineQT.zip #location where data exist
