@@ -16,4 +16,5 @@ ipykernel
 dill #module to convert object to byte stream
 Flask-Cors #flask-cors package is used to handle CORS (Cross-Origin Resource Sharing)
 ensure #this module we used to ensure the rtn dtype of function
+joblib #use to save binary file
 -e .
