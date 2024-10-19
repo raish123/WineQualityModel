@@ -3,7 +3,8 @@ import os,sys
 from src.Wine.Exception import CustomException
 from src.Wine.loggers import logger
 from src.Wine.Pipelines.data_validation_pipeline import DataValidationTraining
-from src.Wine.Pipelines.data_transformation_pipeline import DataTransformationTraining
+from src.Wine.Pipelines.trained_pipeline import ModelTrainingPipeline
+
 
 stage_name = "Data Ingestion"
 
@@ -38,13 +39,13 @@ print()
 logger.info("*"*100)
 
 
-stage_name3 = "Data Transformation"
+stage_name3 = "Model training and transformation"
 
 try:
     logger.info(f">>>{stage_name3} started <<<<")
     #creating an object of DataIngestionTraining class
-    dtt = DataTransformationTraining()
-    dtt.main()
+    mtp = ModelTrainingPipeline()
+    mtp.main()
     logger.info(f">>>{stage_name3} stopped <<<<")
 
 except Exception as e:

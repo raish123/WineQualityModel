@@ -22,3 +22,9 @@ data_transformation:
   csv_dir_path: artifacts/data_ingestion/ #yaha se csv file ley kar data transformation doing
 
 
+#step4:-In this Stage We are Doing Model Training!!!
+model_training:
+  root_dir_path: artifacts/model_training
+  save_best_model_dirpath: artifacts/model_training/models.pkl
+
+

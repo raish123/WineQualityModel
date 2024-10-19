@@ -1,1 +1,52 @@
-test_key: test_value
+ElasticNet:
+  alpha: [0.5, 0.75, 1.0]  # Regularization strength, including more options for experimentation
+  l1_ratio: [0.3, 0.5, 0.7, 0.8]  # Wider range to experiment with the L1 and L2 penalties
+  random_state: [42]  # Ensure reproducibility
+  fit_intercept: [True]  # Include intercept in the model
+  max_iter: [10, 50]  # Increased iterations for more robust optimization
+
+DecisionTreeRegressor:
+  criterion: ["squared_error", "friedman_mse", "absolute_error"]  # Loss function
+  splitter: ['best', 'random']  # Split strategy
+  max_depth: [3, 4, 5]  # A wider range to explore deeper trees
+  min_samples_split: [2, 5, 10]  # Split based on the number of samples
+  min_samples_leaf: [1, 2, 4, 6]  # Added one more option to experiment with minimum leaf sizes
+  min_weight_fraction_leaf: [0.0, 0.1]  # Added a slight variation for weighted fractions
+  max_features: ["sqrt", "log2"]  # Added "auto" to let the model decide
+
+RandomForestRegressor:
+  n_estimators: [10, 20, 30]  # Increased number of trees for better ensemble learning
+  criterion: ["squared_error", "friedman_mse", "absolute_error"]  # Different loss functions
+  n_jobs: [-1]  # Utilize all cores
+  verbose: [0, 1]  # Added verbosity options
+  max_depth: [3, 4, 5]  # Increased depth for more complex models
+  min_samples_split: [2, 5, 10]  # Minimum samples for splitting
+  min_samples_leaf: [1, 2, 4, 6]  # Slightly expanded range for leaf nodes
+  min_weight_fraction_leaf: [0.0, 0.1]  # Fraction-based constraints
+  max_features: ["sqrt", "log2"]  # Added "auto" for dynamic feature selection
+
+SVR:
+  C: [0.1, 1.0, 10.0]  # Extended range of regularization parameter
+  kernel: ["linear", "poly", "rbf"]  # Removed "sigmoid" as it is less common in practice
+  degree: [2, 3, 5]  # Kept a range of degrees for polynomial kernels
+  gamma: ["scale", "auto"]  # Kernel coefficient for 'rbf' and 'poly'
+
+XGBRegressor:
+  n_estimators: [10, 20, 30]  # Extended to more estimators
+  max_depth: [3, 6, 9]  # Deeper trees for more complex interactions
+  learning_rate: [0.01, 0.05, 0.1]  # Kept the same for step size control
+  subsample: [0.7, 0.8, 1.0]  # Tweaked subsample values for better generalization
+  colsample_bytree: [0.7, 0.9, 1.0]  # More column subsample variations
+  gamma: [0, 0.1, 0.3]  # Expanded gamma values for controlling splits
+
+GradientBoostingRegressor:
+  n_estimators: [10, 20, 30]  # Boosting iterations with increased steps
+  loss: ["squared_error", "huber", "quantile"]  # Focus on smoother loss functions
+  criterion: ["squared_error", "friedman_mse"]  # Kept for error measurement
+  learning_rate: [0.01, 0.1, 0.2]  # Added faster learning rates
+  verbose: [0, 1]  # Added verbosity control
+  max_depth: [3, 5, 7]  # Increased max depth for more complex trees
+  min_samples_split: [2, 5, 10]  # Kept the same for splits
+  min_samples_leaf: [1, 2, 5]  # Slightly expanded range for leaf nodes
+  min_weight_fraction_leaf: [0.0, 0.1]  # Added a slight fraction for leaf nodes
+  max_features: ["sqrt", "log2"]  # Feature selection strategies
